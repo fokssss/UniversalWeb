@@ -1,0 +1,19 @@
+[
+  {
+    "name": "f2f",
+    "controller": "com.yonyou.xjson.controller.F2FController"
+  },
+  {
+    "name": "ifly",
+    "controller": "com.yonyou.xjson.controller.iFlyController"
+  },
+  {
+    "name": "face",
+    "controller": "com.yonyou.xjson.controller.BaiduFaceController"
+  },
+  {
+    "name": "dg",
+    "controller": "com.yonyou.xjson.controller.DigitizeController"
+  }
+
+]

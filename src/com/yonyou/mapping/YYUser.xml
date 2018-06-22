@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yonyou.mapping.YYUser_MAPPING">
+	<select id="selectByID" parameterType="int" resultType="YYUser">
+		select * from `YYUser` where pkid = #{id}
+	</select>
+	<select id="selectByiFlykey" parameterType="String" resultType="YYUser">
+		select * from `YYUser` where iflykey = #{id}
+	</select>
+	<select id="getAll" resultType="YYUser">
+		select * from `YYUser`
+	</select>
+	<select id="getTopAll" resultType="YYUser">
+		select * from `YYUser`
+	</select>
+	<insert id="addItem" parameterType="YYUser">
+		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="pkid">
+			SELECT LAST_INSERT_ID() AS pkid
+		</selectKey>
+		insert into YYUser (
+			user_info,iflykey)
+		values (
+			#{user_info},#{iflykey})
+	</insert>
+	<delete id="deleteItem" parameterType="YYUser">
+		delete from YYUser where pkid=#{pkid}
+	</delete>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="YYUser" type="com.yonyou.model.YYUser"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://47.92.67.238:3306/yydb?useUnicode=true&amp;characterEncoding=utf-8"/>
+                <!--<property name="url" value="jdbc:mysql://localhost:3306/chnbs"/>-->
+                <property name="username" value="root"/>
+                <property name="password" value="biscuit"/>
+                <property name="poolPingEnabled" value="true"/>
+                <property name="poolPingQuery" value="select now() from CSUser limit 1"/>
+                <property name="poolPingConnectionsNotUsedFor" value="3600000"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="com/yonyou/mapping/YYUser.xml"/>
+    </mappers>
+</configuration>
