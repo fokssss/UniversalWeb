@@ -18,6 +18,10 @@
   {
     "name":"login",
     "controller":"com.yonyou.login.UniversalLoginController"
+  },
+  {
+    "name":"news",
+    "controller":"com.yonyou.news.NewsController"
   }
 
 ]
